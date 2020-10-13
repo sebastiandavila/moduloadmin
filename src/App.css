@@ -1,0 +1,25 @@
+
+.App-logo {
+  height: 6.5vmin;
+  pointer-events: none;
+}
+
+header {
+	background: #333;
+	color: white;
+  height: 101px;
+  justify-content:center;
+  width: 100%; 
+	left: 0;
+	top: 0; 
+	position: fixed; 
+  
+}	
+
+  
+.tabla
+{
+  padding-top: 130px;
+  width: 80%;
+}
+
