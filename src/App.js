@@ -3,19 +3,22 @@ import React, { useState, component, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
 import ExportExcel from "react-export-excel";
+import Filtro from "./filtro"
 
 const ExcelFile = ExportExcel.ExcelFile;
 const Excelsheet = ExportExcel.Excelsheet;
 const Excelcol = ExportExcel.Excelcol;
 
 function App() {
+
+
   const [lista, setLista] = useState([]);
 
   const listar = async () => {
     let vector = [];
     try {
       const snapshot = await axios.get("http://localhost:3020/clientes/");
-      console.log(snapshot.data.data);
+      
 
       snapshot.data.data.forEach((doc) => {
         //console.log(doc.data().Nombres)
@@ -30,11 +33,7 @@ function App() {
           Fecha: doc.Fecha,
         };
         vector.push(obj);
-        //console.log(obj)
-        /*  setIdentificador(doc.id);
-          setTelefono(doc.data().Telefono);
-          setEmail(doc.data().Correo);
-          setNombre(doc.data().Nombre); */
+        
       });
       setLista(vector);
     } catch (error) {
@@ -61,7 +60,7 @@ function App() {
           alt="logo"
         />
       </header>
-      <div className="col"></div>
+      
       <div className="tabla">
         <table class="table">
           <center>
@@ -103,6 +102,10 @@ function App() {
                 </Excelsheet>
 
       </ExcelFile>
+
+      <div className="col">
+        <Filtro lista={lista}/>
+      </div>
     </div>
   );
 }
