@@ -55,17 +55,17 @@ function App() {
       ></link>
       <header className="App-header">
         <img
-          src="https://lh3.googleusercontent.com/proxy/D5LX74CSwix0S7YO2WkPTfTi_33M7ojTnt2yvwPTwE1gRHFqpYB7Gm2Df6JTnMLU_9yisq9rLutJfA1coEBjHEap6w2iBzp7zMl0LqBgAl3bX8kVLw"
+          src="http://obvio.com.co/contenidos/uploads/2017/03/logo-obvio.png"
           className="App-logo"
           alt="logo"
         />
       </header>
       
       <div className="tabla">
-        <table class="table">
+        <table className="flatTable">
           <center>
             <thead>
-              <tr>
+              <tr class="headingTr">
                 <th scope="col">Tipo de Identificacion</th>
                 <th scope="col">Identificacion</th>
                 <th scope="col">Nombres</th>
@@ -89,7 +89,8 @@ function App() {
           </center>
         </table>
       </div>
-      <ExcelFile element={<center><button class="btn btn-primary">Exportar a excel</button></center>} filename="Clientes">
+      <br></br>
+      <ExcelFile element={<center><button class="btn btn-outline-success" >Exportar a excel</button></center>} filename="Clientes">
                 <Excelsheet data={lista} name="Clientes">
 
                 <Excelcol label="Tipo de Identificacion" value="TipoID"/>

@@ -34,41 +34,28 @@ class filtro extends React.Component {
     if (this.state.Tipo == "Tipo de filtro" || this.state.Valor == "") {
       alert("Rellene todos los campos para enviar la informacion");
     } else {
-      var lista = document.getElementById("filtro");
+      var lista = document.getElementById("tbl");
 
-      lista.insertAdjacentHTML(
-        "beforeend",
-        "<th><b>Tipo de Identificacion</b></th>" +
-          "-----" +
-          "<th><b>Identificacion</b></th>" +
-          "-----" +
-          "<th><b>Nombres</b></th>" +
-          "-----" +
-          "<th><b>Apellidos</b></th>" +
-          "-----" +
-          "<th><b>Correo</b></th>" +
-          "-----" +
-          "<th><b>Fecha de registro</b></th><br>"
-      );
+      
       console.log(this.state.Tipo);
       this.props.lista.map((cliente) => {
         if (cliente[this.state.Tipo] == this.state.Valor) {
           console.log(cliente.Nombres);
 
           lista.insertAdjacentHTML(
-            "beforeend",
-            "<td>" +
+            "afterbegin",
+            "<td>"+
               cliente.TipoID +
-              "</td>-----<td>" +
-              cliente.Identificacion +
-              "</td>-----<td>" +
-              cliente.Nombres +
-              "</td>-----<td>" +
-              cliente.Apellidos +
-              "</td>-----<td>" +
-              cliente.Email +
-              "</td>-----<td>" +
-              cliente.Fecha +
+              "</td><td>"+
+              cliente.Identificacion+
+              "</td><td>"+
+              cliente.Nombres+
+              "</td><td>"+
+              cliente.Apellidos+
+              "</td><td>"+
+              cliente.Email+
+              "</td><td>"+
+              cliente.Fecha+
               "</td><br>"
           );
         }
@@ -126,11 +113,30 @@ class filtro extends React.Component {
                   ></input>
                 </div>
 
-                <button type="submit" class="btn btn-primary mb-2">
+                <button type="submit" class="btn btn-outline-success">
                   Enviar
                 </button>
               </form>
+              <br></br>
+             
             </div>
+            <table className="flatTable">
+          <center>
+            <thead>
+              <tr class="headingTr">
+                <th scope="col">Tipo de Identificacion</th>
+                <th scope="col">Identificacion</th>
+                <th scope="col">Nombres</th>
+                <th scope="col">Apellidos</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Fecha de registro</th>
+              </tr>
+            </thead>
+            <tbody id="tbl">
+             
+            </tbody>
+          </center>
+        </table>
           </center>
           <script
             src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

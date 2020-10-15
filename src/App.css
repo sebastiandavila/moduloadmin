@@ -1,13 +1,16 @@
 
+
 .App-logo {
-  height: 6.5vmin;
+  height: 15vmin;
   pointer-events: none;
+  padding-left: 30px;
+  padding-top: 20px;
 }
 
 header {
 	background: #333;
 	color: white;
-  height: 101px;
+  height: 103px;
   justify-content:center;
   width: 100%; 
 	left: 0;
@@ -20,7 +23,7 @@ header {
 .tabla
 {
   padding-top: 130px;
-  width: 80%;
+  
 }
 
 .col{
@@ -32,3 +35,43 @@ header {
   width: 90%;
 
 }
+
+
+
+.flatTable{  
+  width:100%;
+  min-width:500px;
+  border-collapse:collapse;  
+  font-weight:bold;
+  color:#6b6b6b;
+}
+  
+  tr{
+    height:50px;
+    background:#f6f3f7;
+    border-bottom:rgba(0,0,0,.05) 1px solid;
+  }
+  
+  td{    
+    box-sizing:border-box;
+    padding-left:30px;
+    
+  }
+
+.titleTr{
+  height:70px;  
+  color:#f6f3f7; 
+  background:#418a95;  
+  border:0px solid;
+}
+
+
+
+.headingTr{
+    height:30px;
+    background:#418a95;
+    color:#f6f3f7; 
+    font-size:8pt;
+    border:0px solid;
+}  
+
